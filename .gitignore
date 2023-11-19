@@ -29,6 +29,8 @@ migrate_working_dir/
 .dart_tool/
 .packages
 build/
+.flutter-plugins
+.flutter-plugins-dependencies
 
 
 # Example app specific
@@ -43,3 +45,5 @@ example/.idea/
 example/.vscode/
 example/ios/Flutter/Generated.xcconfig
 example/android/app/google-services.json
+
+
