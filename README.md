@@ -1,6 +1,6 @@
 # Visual Cache
 
-A Flutter package for easily obtaining the size of the application cache. `VisualCache` allows you to retrieve the cache size in a human-readable format (MB or GB), making it suitable for displaying cache-related information in your app's UI.
+A Flutter package for easily obtaining the size of the application cache. `Visual Cache` allows you to retrieve the cache size in a human-readable format (MB or GB), making it suitable for displaying cache-related information in your app's UI.
 
 ## Features
 
@@ -8,13 +8,18 @@ A Flutter package for easily obtaining the size of the application cache. `Visua
 - Display cache size in MB or GB.
 - Easy to integrate and use in any Flutter app.
 
+
+## Screenshots
+
+<img src="https://github.com/Smolla-ITc/visual_cache/image/scr1.png?raw=true"  width="350"/>
+
 ## Getting Started
 
-To use the `visual_cache` package, follow these simple steps:
+To use the `Visual Cache` package, follow these simple steps:
 
 ### Installation
 
-Add `visual_cache` as a dependency in your `pubspec.yaml` file:
+Add `Visual Cache` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
@@ -26,9 +31,10 @@ dependencies:
 ## Usage
 
 ``` dart
-// IMPORT PACKAGE
+// Import package
 import 'package:visual_cache/visual_cache.dart';
 
+// Show cache
 FutureBuilder<String>(
   future: VisualCache().getCacheSize(),
   builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
