@@ -11,7 +11,7 @@ A Flutter package for easily obtaining the size of the application cache. `Visua
 
 ## Screenshots
 
-<img src="https://github.com/Smolla-ITc/visual_cache/image/scr1.png?raw=true"  width="350"/>
+<img src="https://github.com/Smolla-ITc/visual_cache/blob/main/image/scr1.png"  width="350"/>
 
 ## Getting Started
 
