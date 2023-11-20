@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:visual_cache/visual_cache.dart';
+import 'package:visual_cache/widget/visual_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,38 +35,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'Cache size',
               style: TextStyle(fontSize: 24),
             ),
-            FutureBuilder<String>(
-              future: VisualCache().getCacheSize(),
-              builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  // Display a loading indicator while waiting for the future to complete
-                  return const CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  // Handle the error case
-                  return Text('Error: ${snapshot.error}');
-                } else {
-                  // When data is ready, display it
-                  return Text(
-                    snapshot.data ?? 'Cache size not available',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  );
-                }
-              },
-            )
+             SizedBox(height: 70,),
+
+             VisualCacheWidget(subdirectories: ['NewFolder','NewFolder2', 'NewFolder3'],)
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
