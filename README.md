@@ -26,17 +26,20 @@ Add `Visual Cache` as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  visual_cache: ^1.0.0-betta.1
+  visual_cache: ^1.0.0-betta.2
 ```
 
 ## Usage
 
 ``` dart
 // Import package
-import 'package:visual_cache/visual_cache.dart';
+import 'package:visual_cache/widget/visual_widget.dart';
 
 // Show cache chart
-VisualCacheWidget(subdirectories: ['NewFolder','NewFolder2', 'NewFolder3'],)
+VisualCacheWidget(subdirectories: ['NewFolder','NewFolder2', 'NewFolder3']),
+
+// Or immediately display the entire cache without subdirectories
+VisualCacheWidget(),
 ```
  
 Available temporarily only for `Android`
