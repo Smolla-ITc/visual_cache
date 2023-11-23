@@ -4,15 +4,15 @@ A Flutter package for easily obtaining the size of the application cache. `Visua
 
 ## Features
 
-- Get the cache size of your Flutter application.
+- Get the cache size of your Flutter app.
 - Display cache size in MB or GB.
 - Easy to integrate and use in any Flutter app.
-- Ability to add your own directories.
-
+- Ability to add your own catalogs and your own colors.
+- Flexible chart settings.
 
 ## Screenshots
 
-<img src="https://github.com/Smolla-ITc/visual_cache/blob/main/image/scr1.png"  width="350"/>
+<img src="https://raw.githubusercontent.com/Smolla-ITc/visual_cache/main/image/scr2.png"  width="350"/>
 
 ## Getting Started
 
@@ -26,20 +26,32 @@ Add `Visual Cache` as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  visual_cache: ^1.0.0-betta.2
+  visual_cache: ^1.0.0-betta.3
 ```
 
 ## Usage
 
-``` dart
+```dart
 // Import package
-import 'package:visual_cache/widget/visual_widget.dart';
+import 'package:visual_cache/visual_widget.dart';
 
 // Show cache chart
-VisualCacheWidget(subdirectories: ['NewFolder','NewFolder2', 'NewFolder3']),
-
-// Or immediately display the entire cache without subdirectories
-VisualCacheWidget(),
+ VisualCache(
+   // 'Path to subdirectories ': 'Custom name subdirectories'
+   namedSubdirectories: {
+     'NewFolder': 'Images',
+     'NewFolder2': 'Videos',
+     'NewFolder3': 'File',
+   },
+   // Custom colors subdirectories
+   colorSubdirectories: [
+     Colors.amberAccent, // Images color
+     Colors.deepOrange, // Videos color
+     Colors.deepPurpleAccent, // File color
+     Colors.teal, // Add a final color for "Rest Cache" if you don't want it to be determined by itself
+   ],
+   showLegends: true, // Enable disable display of directory names
+ )    
 ```
- 
-Available temporarily only for `Android`
+
+Available temporarily only for `Android`.

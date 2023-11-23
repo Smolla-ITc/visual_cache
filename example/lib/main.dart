@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:visual_cache/widget/visual_widget.dart';
+import 'package:visual_cache/visual_cache.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,26 +16,19 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Visual cache Demo'),
+      home: const VisualCacheDemo(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class VisualCacheDemo extends StatelessWidget {
+  const VisualCacheDemo({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Visual cache demo'),
       ),
       body: const Center(
         child: Column(
@@ -45,9 +38,24 @@ class _MyHomePageState extends State<MyHomePage> {
               'Cache size',
               style: TextStyle(fontSize: 24),
             ),
-             SizedBox(height: 70,),
-
-             VisualCacheWidget(subdirectories: ['NewFolder','NewFolder2', 'NewFolder3'],)
+            SizedBox(height: 70),
+            VisualCache(
+              // 'Path to subdirectories ': 'Custom name subdirectories'
+              namedSubdirectories: {
+                'NewFolder': 'Images',
+                'NewFolder2': 'Videos',
+                'NewFolder3': 'File',
+              },
+              // Custom colors subdirectories
+              colorSubdirectories: [
+                Colors.amberAccent, // Images color
+                Colors.deepOrange, // Videos color
+                Colors.deepPurpleAccent, // File color
+                Colors
+                    .teal, // Add a final color for "Rest Cache" if you don't want it to be determined by itself
+              ],
+              showLegends: true, // Enable disable display of directory names
+            )
           ],
         ),
       ),

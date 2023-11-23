@@ -1,6 +1,6 @@
 name: visual_cache
 description: Visual Cache was created to help you see how much cache your application has accumulated.
-version: 1.0.0-betta.2
+version: 1.0.0-betta.3
 homepage: https://github.com/Smolla-ITc/visual_cache
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^3.0.1
 
 topics:
   - visual-cache
@@ -26,7 +26,7 @@ topics:
 
 screenshots:
   - description: 'Page of cache size'
-    path: image/scr1.png
+    path: image/scr2.png
 flutter:
   plugin:
     platforms:
