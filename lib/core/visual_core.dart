@@ -2,18 +2,28 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
+
 class VisualCacheCore {
-  /// Gets the cache directory and returns its size in MB or GB.
-  /// Gets the specified cache subdirectories and returns their total size in MB or GB.
-  /// If no subdirectories are specified, it returns the size of the entire cache directory.
-  Future<Map<String, int>> getCacheSizeDetails(
-      {List<String>? subdirectories}) async {
+
+  /// Provides a stream of cache size details for real-time updates.
+  Stream<Map<String, int>> getCacheSizeStream({List<String>? subdirectories, Duration interval = const Duration(seconds: 1)}) async* {
+    /// Continuously emits cache size details at specified intervals.
+    while (true) {
+      await Future.delayed(interval); // Wait for the interval duration
+      yield await getCacheSizeDetails(subdirectories: subdirectories);
+    }
+  }
+
+  /// Fetches cache size details once.
+  Future<Map<String, int>> getCacheSizeDetails({List<String>? subdirectories}) async {
     final cacheDir = await getTemporaryDirectory();
     Map<String, int> sizes = {};
 
+    /// Total size of the cache directory.
     int totalCacheSize = await _calculateDirectorySize(cacheDir);
     int specifiedDirsSize = 0;
 
+    /// Calculate size for each specified subdirectory.
     if (subdirectories != null && subdirectories.isNotEmpty) {
       for (var subdir in subdirectories) {
         final subDirPath = Directory('${cacheDir.path}/$subdir');
@@ -27,6 +37,7 @@ class VisualCacheCore {
       }
     }
 
+    /// Calculate the size of the remaining cache.
     int remainingSize = totalCacheSize - specifiedDirsSize;
     if (remainingSize > 0) {
       sizes['Rest cache'] = remainingSize;
@@ -34,7 +45,7 @@ class VisualCacheCore {
     return sizes;
   }
 
-  /// Recursively calculates the size of a directory and its subdirectories.
+  /// Calculates the size of a directory recursively.
   Future<int> _calculateDirectorySize(Directory dir) async {
     int size = 0;
     try {

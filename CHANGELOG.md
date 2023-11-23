@@ -1,3 +1,14 @@
+## 1.0.0-betta.4
+
+* Added real-time cache display/updates.
+* Added the ability to disable or enable real-time cache displays. Example:
+```dart
+isRealTime: false, // Enable disable realtime cache
+```
+* Rewritten comments for better understanding of the code.
+* Minor bugs fixed.
+* Updated README.md file.
+
 ## 1.0.0-betta.3
 * Now you need to call `VisualCache()` instead of `VisualCacheWidget()`.
 * Added the ability to add names to your subdirectories, example: 

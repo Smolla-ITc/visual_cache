@@ -40,13 +40,14 @@ class VisualCacheDemo extends StatelessWidget {
             ),
             SizedBox(height: 70),
             VisualCache(
-              // 'Path to subdirectories ': 'Custom name subdirectories'
+              /// 'Path to subdirectories ': 'Custom name subdirectories'
               namedSubdirectories: {
                 'NewFolder': 'Images',
                 'NewFolder2': 'Videos',
                 'NewFolder3': 'File',
               },
-              // Custom colors subdirectories
+
+              /// Custom colors subdirectories
               colorSubdirectories: [
                 Colors.amberAccent, // Images color
                 Colors.deepOrange, // Videos color
@@ -55,6 +56,7 @@ class VisualCacheDemo extends StatelessWidget {
                     .teal, // Add a final color for "Rest Cache" if you don't want it to be determined by itself
               ],
               showLegends: true, // Enable disable display of directory names
+              isRealTime: false, // Enable disable realtime cache
             )
           ],
         ),
