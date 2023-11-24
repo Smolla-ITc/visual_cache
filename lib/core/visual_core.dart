@@ -2,11 +2,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
-
 class VisualCacheCore {
-
   /// Provides a stream of cache size details for real-time updates.
-  Stream<Map<String, int>> getCacheSizeStream({List<String>? subdirectories, Duration interval = const Duration(seconds: 1)}) async* {
+  Stream<Map<String, int>> getCacheSizeStream(
+      {List<String>? subdirectories,
+      Duration interval = const Duration(seconds: 1)}) async* {
     /// Continuously emits cache size details at specified intervals.
     while (true) {
       await Future.delayed(interval); // Wait for the interval duration
@@ -15,7 +15,8 @@ class VisualCacheCore {
   }
 
   /// Fetches cache size details once.
-  Future<Map<String, int>> getCacheSizeDetails({List<String>? subdirectories}) async {
+  Future<Map<String, int>> getCacheSizeDetails(
+      {List<String>? subdirectories}) async {
     final cacheDir = await getTemporaryDirectory();
     Map<String, int> sizes = {};
 

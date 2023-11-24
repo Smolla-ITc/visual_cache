@@ -61,12 +61,10 @@ class VisualCache extends StatelessWidget {
             animationDuration: const Duration(milliseconds: 800),
             chartLegendSpacing: 32,
             colorList: colorSubdirectories,
-            chartRadius: MediaQuery
-                .of(context)
-                .size
-                .width / 3.2,
+            chartRadius: MediaQuery.of(context).size.width / 3.2,
             chartType: ChartType.ring,
             ringStrokeWidth: 32,
+
             /// Total size
             centerText: formatSize(totalSizeInBytes),
             legendOptions: LegendOptions(
@@ -120,10 +118,7 @@ class VisualCache extends StatelessWidget {
             animationDuration: const Duration(milliseconds: 800),
             chartLegendSpacing: 32,
             colorList: colorSubdirectories,
-            chartRadius: MediaQuery
-                .of(context)
-                .size
-                .width / 3.2,
+            chartRadius: MediaQuery.of(context).size.width / 3.2,
             chartType: ChartType.ring,
             ringStrokeWidth: 32,
 
@@ -152,6 +147,3 @@ class VisualCache extends StatelessWidget {
     );
   }
 }
-
-
-

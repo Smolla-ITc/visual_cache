@@ -1,4 +1,3 @@
-
 /// Formats values in MB or GB
 String formatSize(double sizeInBytes) {
   const oneMB = 1024 * 1024;
