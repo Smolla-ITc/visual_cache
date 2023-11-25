@@ -54,7 +54,7 @@ import 'package:visual_cache/visual_widget.dart';
      Colors.teal, // Add a final color for "Rest Cache" if you don't want it to be determined by itself
    ],
    showLegends: true, // Enable disable display of directory names
-   isRealTime: false, // Enable disable realtime cache
+   isRealTime: true, // Enable disable realtime cache
 ) 
             
 ```

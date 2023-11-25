@@ -1,3 +1,10 @@
+## 1.0.0
+* Release.
+* bug fixed.
+
+## 1.0.0-rc.1
+* Code formatted for dart.
+
 ## 1.0.0-betta.4
 
 * Added real-time cache display/updates.
