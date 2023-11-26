@@ -20,12 +20,15 @@ class VisualCache extends StatelessWidget {
   /// Flag to indicate whether the data should be fetched in real-time.
   final bool isRealTime;
 
+  final TextStyle textStyle;
+
   const VisualCache({
     super.key,
     required this.namedSubdirectories,
     required this.colorSubdirectories,
     required this.showLegends,
     this.isRealTime = false, // Default value is false for one-time fetch.
+    required this.textStyle,
   });
 
   @override
@@ -61,6 +64,7 @@ class VisualCache extends StatelessWidget {
             animationDuration: const Duration(milliseconds: 800),
             chartLegendSpacing: 32,
             colorList: colorSubdirectories,
+            centerTextStyle: textStyle,
             chartRadius: MediaQuery.of(context).size.width / 3.2,
             chartType: ChartType.ring,
             ringStrokeWidth: 32,
@@ -71,11 +75,10 @@ class VisualCache extends StatelessWidget {
               showLegendsInRow: false,
               legendPosition: LegendPosition.bottom,
               showLegends: showLegends,
-              legendTextStyle: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              legendTextStyle: textStyle,
             ),
-            chartValuesOptions: const ChartValuesOptions(
+            chartValuesOptions: ChartValuesOptions(
+              chartValueStyle: textStyle,
               showChartValueBackground: false,
               showChartValues: true,
               showChartValuesInPercentage: true,

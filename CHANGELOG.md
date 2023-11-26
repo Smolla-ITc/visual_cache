@@ -1,3 +1,7 @@
+## 1.1.1
+* Add custom text style.
+* Updated README.md
+
 ## 1.0.0
 * Release.
 * bug fixed.

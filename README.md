@@ -29,7 +29,7 @@ Add `Visual Cache` as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  visual_cache: ^1.0.0-betta.4
+  visual_cache: ^1.1.1
 ```
 
 ## Usage
@@ -55,6 +55,10 @@ import 'package:visual_cache/visual_widget.dart';
    ],
    showLegends: true, // Enable disable display of directory names
    isRealTime: true, // Enable disable realtime cache
+   /// Custom text style
+    textStyle: TextStyle (
+    color: Colors.black
+  ),
 ) 
             
 ```

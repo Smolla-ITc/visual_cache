@@ -57,6 +57,10 @@ class VisualCacheDemo extends StatelessWidget {
               ],
               showLegends: true, // Enable disable display of directory names
               isRealTime: true, // Enable disable realtime cache
+              /// Custom text style
+              textStyle: TextStyle(
+                color: Colors.black
+              ),
             )
           ],
         ),
