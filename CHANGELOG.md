@@ -1,6 +1,11 @@
+## 1.2.0
+* Rename `showLegends -> showDirectoryName`.
+* Increased real-time update time from `1 -> 2` seconds.
+* Updated README.md.
+
 ## 1.1.1
 * Add custom text style.
-* Updated README.md
+* Updated README.md.
 
 ## 1.0.0
 * Release.

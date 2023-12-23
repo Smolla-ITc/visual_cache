@@ -15,7 +15,7 @@ A Flutter package for easily obtaining the size of the application cache. `Visua
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/Smolla-ITc/visual_cache/release/image/scr2.png" width="350"/>
+<img src="https://raw.githubusercontent.com/Smolla-ITc/visual_cache/release/image/scr2.png" width="350" alt="image"/>
 
 ## Getting Started
 
@@ -29,8 +29,10 @@ Add `Visual Cache` as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutter:
     sdk: flutter
-  visual_cache: ^1.1.1
+  visual_cache: ^1.2.0
 ```
+
+Tested only on `Android`, can also work on `iOS`.
 
 ## Usage
 
@@ -53,14 +55,11 @@ import 'package:visual_cache/visual_widget.dart';
      Colors.deepPurpleAccent, // File color
      Colors.teal, // Add a final color for "Rest Cache" if you don't want it to be determined by itself
    ],
-   showLegends: true, // Enable disable display of directory names
+   showDirectoryName: true, // Enable disable display of directory names
    isRealTime: true, // Enable disable realtime cache
    /// Custom text style
     textStyle: TextStyle (
     color: Colors.black
   ),
-) 
-            
+)
 ```
-
-Available temporarily only for `Android`.

@@ -6,7 +6,7 @@ class VisualCacheCore {
   /// Provides a stream of cache size details for real-time updates.
   Stream<Map<String, int>> getCacheSizeStream(
       {List<String>? subdirectories,
-      Duration interval = const Duration(seconds: 1)}) async* {
+      Duration interval = const Duration(seconds: 2)}) async* {
     /// Continuously emits cache size details at specified intervals.
     while (true) {
       await Future.delayed(interval); // Wait for the interval duration

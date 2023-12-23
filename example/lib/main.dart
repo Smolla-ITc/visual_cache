@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Visual cache Demo',
+      title: 'Visual cache demo v1.2.0',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
@@ -28,7 +28,7 @@ class VisualCacheDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Visual cache demo'),
+        title: const Text('Visual cache demo v1.2.0'),
       ),
       body: const Center(
         child: Column(
@@ -55,7 +55,7 @@ class VisualCacheDemo extends StatelessWidget {
                 Colors
                     .teal, // Add a final color for "Rest Cache" if you don't want it to be determined by itself
               ],
-              showLegends: true, // Enable disable display of directory names
+              showDirectoryName: true, // Enable disable display of directory names
               isRealTime: true, // Enable disable realtime cache
               /// Custom text style
               textStyle: TextStyle(

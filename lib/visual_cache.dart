@@ -15,7 +15,7 @@ class VisualCache extends StatelessWidget {
   final List<Color> colorSubdirectories;
 
   /// Flag to indicate whether name directories should be shown in the chart.
-  final bool showLegends;
+  final bool showDirectoryName;
 
   /// Flag to indicate whether the data should be fetched in real-time.
   final bool isRealTime;
@@ -26,7 +26,7 @@ class VisualCache extends StatelessWidget {
     super.key,
     required this.namedSubdirectories,
     required this.colorSubdirectories,
-    required this.showLegends,
+    required this.showDirectoryName,
     this.isRealTime = false, // Default value is false for one-time fetch.
     required this.textStyle,
   });
@@ -74,7 +74,7 @@ class VisualCache extends StatelessWidget {
             legendOptions: LegendOptions(
               showLegendsInRow: false,
               legendPosition: LegendPosition.bottom,
-              showLegends: showLegends,
+              showLegends: showDirectoryName,
               legendTextStyle: textStyle,
             ),
             chartValuesOptions: ChartValuesOptions(
@@ -130,7 +130,7 @@ class VisualCache extends StatelessWidget {
             legendOptions: LegendOptions(
               showLegendsInRow: false,
               legendPosition: LegendPosition.bottom,
-              showLegends: showLegends,
+              showLegends: showDirectoryName,
               legendTextStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
